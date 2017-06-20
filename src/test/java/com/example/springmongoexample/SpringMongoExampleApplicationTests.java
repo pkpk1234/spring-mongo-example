@@ -26,5 +26,14 @@ public class SpringMongoExampleApplicationTests {
         log.info("persons is {}",persons);
         assertEquals(6,persons.size());
     }
-    
+
+    @Test
+    public void testUpdate() {
+        Person person = this.personRepository.findAll().get(0);
+        person.setFirstName("newFirstName");
+        person = this.personRepository.save(person);
+        log.info("new name person is {}",person);
+        assertEquals(1L,person.getVersion().longValue());
+    }
+
 }
