@@ -26,5 +26,5 @@ public class SpringMongoExampleApplicationTests {
         log.info("persons is {}",persons);
         assertEquals(6,persons.size());
     }
-
+    
 }
